@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -107,6 +108,24 @@
                                             <outlet property="movieTitleLabel" destination="ZDJ-Lt-mck" id="aou-dT-alj"/>
                                             <outlet property="ratingImageView" destination="xqu-3n-lIz" id="4Sp-72-3c6"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieListLoadMoreCellIndicator" rowHeight="116" id="DuL-xS-NNu">
+                                        <rect key="frame" x="0.0" y="112" width="375" height="116"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DuL-xS-NNu" id="wbj-cG-09g">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="A8z-bM-9Kd">
+                                                    <rect key="frame" x="178" y="31" width="20" height="14"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="A8z-bM-9Kd" secondAttribute="bottom" constant="60" id="0n0-no-Pr6"/>
+                                                <constraint firstItem="A8z-bM-9Kd" firstAttribute="top" secondItem="wbj-cG-09g" secondAttribute="topMargin" constant="20" id="7r4-of-Mx2"/>
+                                                <constraint firstItem="A8z-bM-9Kd" firstAttribute="centerX" secondItem="wbj-cG-09g" secondAttribute="centerX" id="W9M-8s-pQx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
