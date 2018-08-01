@@ -82,6 +82,10 @@ extension FreelancerTestMovieListViewController : UITableViewDelegate {
             self.viewModel?.loadMoreMovies()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "movieListToMoviesummarySegue", sender: self)
+    }
 }
 
 extension FreelancerTestMovieListViewController : MovieListProviderDelegate {
