@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-729" y="34"/>
         </scene>
-        <!--View Controller-->
+        <!--Freelancer Test Movie List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FreelancerTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FreelancerTestMovieListViewController" customModule="FreelancerTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,31 +38,31 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieListCellIdentifier" rowHeight="84" id="jRU-H6-HJK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieListCellIdentifier" rowHeight="84" id="jRU-H6-HJK" customClass="MovieListTableViewCell" customModule="FreelancerTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jRU-H6-HJK" id="ki9-Zd-Xxm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xqu-3n-lIz">
-                                                    <rect key="frame" x="317" y="10" width="43" height="29"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xqu-3n-lIz">
+                                                    <rect key="frame" x="330" y="10" width="30" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="43" id="Mpp-Hy-wXC"/>
-                                                        <constraint firstAttribute="height" constant="29" id="NdX-HS-EcB"/>
+                                                        <constraint firstAttribute="width" constant="30" id="Mpp-Hy-wXC"/>
+                                                        <constraint firstAttribute="height" constant="20" id="NdX-HS-EcB"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YA8-8O-ypd">
-                                                    <rect key="frame" x="68" y="10" width="239" height="63"/>
+                                                    <rect key="frame" x="68" y="10" width="252" height="63"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-Lt-mck">
-                                                            <rect key="frame" x="8" y="0.0" width="223" height="35"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-Lt-mck">
+                                                            <rect key="frame" x="8" y="0.0" width="236" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="00:00pm - 00:00pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSr-nA-Gai">
-                                                            <rect key="frame" x="8" y="35" width="223" height="20"/>
+                                                            <rect key="frame" x="8" y="35" width="236" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="U0t-te-I6O"/>
                                                             </constraints>
@@ -82,7 +82,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="ZDJ-Lt-mck" secondAttribute="trailing" constant="8" id="xEQ-6s-dCO"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3kN-X9-A9A">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3kN-X9-A9A">
                                                     <rect key="frame" x="15" y="16.5" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="FbZ-ob-AlQ"/>
@@ -101,6 +101,12 @@
                                                 <constraint firstItem="YA8-8O-ypd" firstAttribute="top" secondItem="ki9-Zd-Xxm" secondAttribute="top" constant="10" id="x3P-kC-Ipb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="channelImageView" destination="3kN-X9-A9A" id="VYX-d6-0zZ"/>
+                                            <outlet property="movieTimeslotLabel" destination="KSr-nA-Gai" id="fSw-8k-EgF"/>
+                                            <outlet property="movieTitleLabel" destination="ZDJ-Lt-mck" id="aou-dT-alj"/>
+                                            <outlet property="ratingImageView" destination="xqu-3n-lIz" id="4Sp-72-3c6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -116,6 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pAm-uj-0AS"/>
                     <connections>
+                        <outlet property="movieListTableView" destination="jIe-bu-Iaa" id="5rA-qS-vh8"/>
                         <segue destination="Ube-sW-4j7" kind="show" id="jUS-hX-129"/>
                     </connections>
                 </viewController>
