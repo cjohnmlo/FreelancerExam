@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 enum Channel: String {
-    case Ten
+    case TEN
     case Seven
     case SBSOne = "SBS One"
     case SBSTwo = "SBS 2"
-    case One
+    case ONE
     case Nine
-    case Eleven
+    case ELEVEN
     case ABC1
     case SevenMate = "7Mate"
-    case SevenTwo = "7 Two"
+    case SevenTwo = "7TWO"
     case Unknown
     
     init(withRawValue: String) {

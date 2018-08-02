@@ -19,7 +19,10 @@ class FreelancerTestMovieListViewController: UIViewController {
         super.viewDidLoad()
         
         // mock movielistprovider
-        self.viewModel = MovieListProviderMock()
+        //self.viewModel = MovieListProviderMock()
+        //self.viewModel?.delegate = self
+        
+        self.viewModel = BeefMovieListProvider()
         self.viewModel?.delegate = self
         
         self.movieListTableView.delegate = self
@@ -39,7 +42,7 @@ class FreelancerTestMovieListViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let summaryVC = segue.destination as! FreelancerTestMovieSummaryViewController
-        summaryVC.viewModel = MovieSummaryViewModelMock(movieDetails: self.selectedMovie!)
+        summaryVC.viewModel = MovieDBMovieSummaryViewModel(movieDetails: self.selectedMovie!)
     }
 
 
@@ -54,7 +57,8 @@ extension FreelancerTestMovieListViewController : UITableViewDataSource {
             return cell
         }
         else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListLoadMoreCellIndicator")!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListLoadMoreCellIndicator") as! MovieListLoadingIndicatorTableViewCell
+            cell.activityIndicator.startAnimating()
             return cell
         }
     }

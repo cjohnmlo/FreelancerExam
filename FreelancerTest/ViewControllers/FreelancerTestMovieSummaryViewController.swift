@@ -32,7 +32,9 @@ class FreelancerTestMovieSummaryViewController: UIViewController {
         _ = viewModel?.movieSummary.observeNext(with: { (movieSummary) in
             if let summary = movieSummary {
                 self.movieSummaryLabel.text = summary
-                self.summaryLoadingIndicator.isHidden = true
+                if summary.count > 0 {
+                    self.summaryLoadingIndicator.isHidden = true
+                }
             }
         })
         

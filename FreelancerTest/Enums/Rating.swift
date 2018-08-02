@@ -23,7 +23,7 @@ enum Rating: String {
             self = rating
         }
         else {
-            self = .Unknown
+            self = .NR
         }
     }
     
