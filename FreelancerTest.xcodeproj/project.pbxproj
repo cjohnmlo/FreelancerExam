@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE768AC92112B81F00067370 /* Frameworks in Resources */ = {isa = PBXBuildFile; fileRef = FE768AC82112B81F00067370 /* Frameworks */; };
+		FE768ACC2112B8E900067370 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE768ACB2112B8E900067370 /* Alamofire.framework */; };
+		FE768ACE2112B8E900067370 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE768ACD2112B8E900067370 /* Bond.framework */; };
+		FE768AD02112B8E900067370 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE768ACF2112B8E900067370 /* Kingfisher.framework */; };
+		FE768AD22112B90A00067370 /* DisplayableMovieSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE768AD12112B90A00067370 /* DisplayableMovieSummary.swift */; };
 		FEC8C5DB21106B03005A1CA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8C5DA21106B03005A1CA6 /* AppDelegate.swift */; };
 		FEC8C5E021106B03005A1CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC8C5DE21106B03005A1CA6 /* Main.storyboard */; };
 		FEC8C5E221106B05005A1CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC8C5E121106B05005A1CA6 /* Assets.xcassets */; };
@@ -33,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE768AC82112B81F00067370 /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Frameworks; sourceTree = "<group>"; };
+		FE768ACB2112B8E900067370 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = FreelancerTest/Frameworks/Alamofire.framework; sourceTree = "<group>"; };
+		FE768ACD2112B8E900067370 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = FreelancerTest/Frameworks/Bond.framework; sourceTree = "<group>"; };
+		FE768ACF2112B8E900067370 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = FreelancerTest/Frameworks/Kingfisher.framework; sourceTree = "<group>"; };
+		FE768AD12112B90A00067370 /* DisplayableMovieSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableMovieSummary.swift; sourceTree = "<group>"; };
 		FEC8C5D721106B03005A1CA6 /* FreelancerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreelancerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC8C5DA21106B03005A1CA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC8C5DF21106B03005A1CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE768ACC2112B8E900067370 /* Alamofire.framework in Frameworks */,
+				FE768ACE2112B8E900067370 /* Bond.framework in Frameworks */,
+				FE768AD02112B8E900067370 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE768ACA2112B8E900067370 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE768ACB2112B8E900067370 /* Alamofire.framework */,
+				FE768ACD2112B8E900067370 /* Bond.framework */,
+				FE768ACF2112B8E900067370 /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FEC8C5CE21106B03005A1CA6 = {
 			isa = PBXGroup;
 			children = (
 				FEC8C5D921106B03005A1CA6 /* FreelancerTest */,
 				FEC8C5EE21106B06005A1CA6 /* FreelancerTestTests */,
 				FEC8C5D821106B03005A1CA6 /* Products */,
+				FE768ACA2112B8E900067370 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +126,7 @@
 				FEC8C5E621106B05005A1CA6 /* Info.plist */,
 				FEC8C5FA211074FD005A1CA6 /* FreelancerTestMovieListViewController.swift */,
 				FEC8C60321107876005A1CA6 /* MovieListTableViewCell.swift */,
+				FE768AC82112B81F00067370 /* Frameworks */,
 			);
 			path = FreelancerTest;
 			sourceTree = "<group>";
@@ -128,6 +153,7 @@
 			children = (
 				FEC8C5FF211076A2005A1CA6 /* MovieListProvider.swift */,
 				FEC8C6012110770E005A1CA6 /* DisplayableMovie.swift */,
+				FE768AD12112B90A00067370 /* DisplayableMovieSummary.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -233,6 +259,7 @@
 				FEC8C5E521106B05005A1CA6 /* LaunchScreen.storyboard in Resources */,
 				FEC8C5E221106B05005A1CA6 /* Assets.xcassets in Resources */,
 				FEC8C5E021106B03005A1CA6 /* Main.storyboard in Resources */,
+				FE768AC92112B81F00067370 /* Frameworks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +285,7 @@
 				FEC8C60C21112583005A1CA6 /* Rating.swift in Sources */,
 				FEC8C5DB21106B03005A1CA6 /* AppDelegate.swift in Sources */,
 				FEC8C60421107876005A1CA6 /* MovieListTableViewCell.swift in Sources */,
+				FE768AD22112B90A00067370 /* DisplayableMovieSummary.swift in Sources */,
 				FEC8C6022110770E005A1CA6 /* DisplayableMovie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +448,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6JRBSNQBX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FreelancerTest/Frameworks",
+				);
 				INFOPLIST_FILE = FreelancerTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,6 +471,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6JRBSNQBX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FreelancerTest/Frameworks",
+				);
 				INFOPLIST_FILE = FreelancerTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
