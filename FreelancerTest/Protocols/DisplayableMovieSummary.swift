@@ -10,5 +10,7 @@ import Foundation
 import Bond
 
 protocol DisplayableMovieSummary {
-    
+    var displayableMovie : DisplayableMovie {get}
+    var movieSummary : Observable<String?> {get}
+    var moviePosterURL : Observable<URL?> {get}
 }

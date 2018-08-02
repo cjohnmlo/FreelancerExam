@@ -12,6 +12,10 @@
 		FE768ACE2112B8E900067370 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE768ACD2112B8E900067370 /* Bond.framework */; };
 		FE768AD02112B8E900067370 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE768ACF2112B8E900067370 /* Kingfisher.framework */; };
 		FE768AD22112B90A00067370 /* DisplayableMovieSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE768AD12112B90A00067370 /* DisplayableMovieSummary.swift */; };
+		FE9BAC7B21132F2800B98438 /* FreelancerTestMovieSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BAC7A21132F2800B98438 /* FreelancerTestMovieSummaryViewController.swift */; };
+		FE9BAC7D2113328700B98438 /* MovieSummaryViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BAC7C2113328700B98438 /* MovieSummaryViewModelMock.swift */; };
+		FE9BAC7F211337F300B98438 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BAC7E211337F300B98438 /* Differ.framework */; };
+		FE9BAC81211337F300B98438 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BAC80211337F300B98438 /* ReactiveKit.framework */; };
 		FEC8C5DB21106B03005A1CA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8C5DA21106B03005A1CA6 /* AppDelegate.swift */; };
 		FEC8C5E021106B03005A1CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC8C5DE21106B03005A1CA6 /* Main.storyboard */; };
 		FEC8C5E221106B05005A1CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC8C5E121106B05005A1CA6 /* Assets.xcassets */; };
@@ -43,6 +47,10 @@
 		FE768ACD2112B8E900067370 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = FreelancerTest/Frameworks/Bond.framework; sourceTree = "<group>"; };
 		FE768ACF2112B8E900067370 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = FreelancerTest/Frameworks/Kingfisher.framework; sourceTree = "<group>"; };
 		FE768AD12112B90A00067370 /* DisplayableMovieSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableMovieSummary.swift; sourceTree = "<group>"; };
+		FE9BAC7A21132F2800B98438 /* FreelancerTestMovieSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerTestMovieSummaryViewController.swift; sourceTree = "<group>"; };
+		FE9BAC7C2113328700B98438 /* MovieSummaryViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSummaryViewModelMock.swift; sourceTree = "<group>"; };
+		FE9BAC7E211337F300B98438 /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = FreelancerTest/Frameworks/Differ.framework; sourceTree = "<group>"; };
+		FE9BAC80211337F300B98438 /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = FreelancerTest/Frameworks/ReactiveKit.framework; sourceTree = "<group>"; };
 		FEC8C5D721106B03005A1CA6 /* FreelancerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreelancerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC8C5DA21106B03005A1CA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC8C5DF21106B03005A1CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9BAC7F211337F300B98438 /* Differ.framework in Frameworks */,
+				FE9BAC81211337F300B98438 /* ReactiveKit.framework in Frameworks */,
 				FE768ACC2112B8E900067370 /* Alamofire.framework in Frameworks */,
 				FE768ACE2112B8E900067370 /* Bond.framework in Frameworks */,
 				FE768AD02112B8E900067370 /* Kingfisher.framework in Frameworks */,
@@ -86,11 +96,22 @@
 		FE768ACA2112B8E900067370 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE9BAC7E211337F300B98438 /* Differ.framework */,
+				FE9BAC80211337F300B98438 /* ReactiveKit.framework */,
 				FE768ACB2112B8E900067370 /* Alamofire.framework */,
 				FE768ACD2112B8E900067370 /* Bond.framework */,
 				FE768ACF2112B8E900067370 /* Kingfisher.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE9BAC7921132ECB00B98438 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FEC8C5FA211074FD005A1CA6 /* FreelancerTestMovieListViewController.swift */,
+				FE9BAC7A21132F2800B98438 /* FreelancerTestMovieSummaryViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		FEC8C5CE21106B03005A1CA6 = {
@@ -115,6 +136,7 @@
 		FEC8C5D921106B03005A1CA6 /* FreelancerTest */ = {
 			isa = PBXGroup;
 			children = (
+				FE9BAC7921132ECB00B98438 /* ViewControllers */,
 				FEC8C6082111255A005A1CA6 /* Enums */,
 				FEC8C60521107B7D005A1CA6 /* Structures */,
 				FEC8C5FD21107641005A1CA6 /* Protocols */,
@@ -124,7 +146,6 @@
 				FEC8C5E121106B05005A1CA6 /* Assets.xcassets */,
 				FEC8C5E321106B05005A1CA6 /* LaunchScreen.storyboard */,
 				FEC8C5E621106B05005A1CA6 /* Info.plist */,
-				FEC8C5FA211074FD005A1CA6 /* FreelancerTestMovieListViewController.swift */,
 				FEC8C60321107876005A1CA6 /* MovieListTableViewCell.swift */,
 				FE768AC82112B81F00067370 /* Frameworks */,
 			);
@@ -144,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				FEC8C60D21113AC1005A1CA6 /* MovieListProviderMock.swift */,
+				FE9BAC7C2113328700B98438 /* MovieSummaryViewModelMock.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -279,12 +301,14 @@
 			files = (
 				FEC8C60A2111257B005A1CA6 /* Channel.swift in Sources */,
 				FEC8C600211076A2005A1CA6 /* MovieListProvider.swift in Sources */,
+				FE9BAC7B21132F2800B98438 /* FreelancerTestMovieSummaryViewController.swift in Sources */,
 				FEC8C60E21113AC1005A1CA6 /* MovieListProviderMock.swift in Sources */,
 				FEC8C5FB211074FD005A1CA6 /* FreelancerTestMovieListViewController.swift in Sources */,
 				FEC8C60721107B8B005A1CA6 /* Movie.swift in Sources */,
 				FEC8C60C21112583005A1CA6 /* Rating.swift in Sources */,
 				FEC8C5DB21106B03005A1CA6 /* AppDelegate.swift in Sources */,
 				FEC8C60421107876005A1CA6 /* MovieListTableViewCell.swift in Sources */,
+				FE9BAC7D2113328700B98438 /* MovieSummaryViewModelMock.swift in Sources */,
 				FE768AD22112B90A00067370 /* DisplayableMovieSummary.swift in Sources */,
 				FEC8C6022110770E005A1CA6 /* DisplayableMovie.swift in Sources */,
 			);

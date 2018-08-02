@@ -52,23 +52,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xqu-3n-lIz">
-                                                    <rect key="frame" x="330" y="10" width="30" height="20"/>
+                                                    <rect key="frame" x="320" y="10" width="40" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="Mpp-Hy-wXC"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Mpp-Hy-wXC"/>
                                                         <constraint firstAttribute="height" constant="20" id="NdX-HS-EcB"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YA8-8O-ypd">
-                                                    <rect key="frame" x="68" y="10" width="252" height="63"/>
+                                                    <rect key="frame" x="68" y="10" width="242" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-Lt-mck">
-                                                            <rect key="frame" x="8" y="0.0" width="236" height="35"/>
+                                                            <rect key="frame" x="8" y="0.0" width="226" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="00:00pm - 00:00pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSr-nA-Gai">
-                                                            <rect key="frame" x="8" y="35" width="236" height="20"/>
+                                                            <rect key="frame" x="8" y="35" width="226" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="U0t-te-I6O"/>
                                                             </constraints>
@@ -154,15 +154,15 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
-        <!--View Controller-->
+        <!--Freelancer Test Movie Summary View Controller-->
         <scene sceneID="rEo-vl-SLL">
             <objects>
-                <viewController id="Ube-sW-4j7" sceneMemberID="viewController">
+                <viewController id="Ube-sW-4j7" customClass="FreelancerTestMovieSummaryViewController" customModule="FreelancerTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J3x-2q-BVh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AV" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-Ba-25i">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-Ba-25i">
                                 <rect key="frame" x="0.0" y="64" width="375" height="146.5"/>
                             </imageView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAC-ke-eP6" userLabel="Mask">
@@ -182,9 +182,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="M" translatesAutoresizingMaskIntoConstraints="NO" id="qbL-hd-LBt">
-                                <rect key="frame" x="152" y="101" width="20" height="15"/>
+                                <rect key="frame" x="147" y="101" width="50" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="haT-M4-SHF"/>
+                                    <constraint firstAttribute="width" constant="50" id="haT-M4-SHF"/>
                                     <constraint firstAttribute="height" constant="15" id="kgF-OA-Isg"/>
                                 </constraints>
                             </imageView>
@@ -203,18 +203,23 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Xf6-zH-olW">
+                                <rect key="frame" x="177" y="355.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qbL-hd-LBt" firstAttribute="top" secondItem="EbZ-RH-AY5" secondAttribute="top" constant="3" id="12H-x2-rvf"/>
-                            <constraint firstItem="qbL-hd-LBt" firstAttribute="leading" secondItem="EbZ-RH-AY5" secondAttribute="trailing" constant="10" id="A68-9f-Kk8"/>
+                            <constraint firstItem="qbL-hd-LBt" firstAttribute="leading" secondItem="EbZ-RH-AY5" secondAttribute="trailing" constant="5" id="A68-9f-Kk8"/>
                             <constraint firstItem="tAC-ke-eP6" firstAttribute="width" secondItem="LV1-Ba-25i" secondAttribute="width" id="EjL-IX-ggN"/>
                             <constraint firstItem="tAC-ke-eP6" firstAttribute="height" secondItem="LV1-Ba-25i" secondAttribute="height" id="NCN-WM-L1G"/>
                             <constraint firstItem="0ts-vm-bxy" firstAttribute="leading" secondItem="BvS-AE-gqc" secondAttribute="leading" constant="20" id="OE2-gT-u1Z"/>
                             <constraint firstItem="EbZ-RH-AY5" firstAttribute="leading" secondItem="BvS-AE-gqc" secondAttribute="leading" constant="20" id="Qo6-Pw-p0C"/>
                             <constraint firstItem="fQk-lg-E6B" firstAttribute="top" secondItem="EbZ-RH-AY5" secondAttribute="bottom" constant="16" id="Qwb-83-qbE"/>
+                            <constraint firstItem="Xf6-zH-olW" firstAttribute="centerX" secondItem="BvS-AE-gqc" secondAttribute="centerX" id="ReX-Ck-lqP"/>
                             <constraint firstItem="LV1-Ba-25i" firstAttribute="leading" secondItem="BvS-AE-gqc" secondAttribute="leading" id="VlG-9o-VP6"/>
                             <constraint firstItem="tAC-ke-eP6" firstAttribute="centerX" secondItem="LV1-Ba-25i" secondAttribute="centerX" id="bQq-BE-jNT"/>
+                            <constraint firstItem="Xf6-zH-olW" firstAttribute="centerY" secondItem="BvS-AE-gqc" secondAttribute="centerY" id="eKi-V7-jep"/>
                             <constraint firstItem="cCO-xu-S5J" firstAttribute="leading" secondItem="0ts-vm-bxy" secondAttribute="leading" id="eqO-jf-aN9"/>
                             <constraint firstItem="BvS-AE-gqc" firstAttribute="trailing" secondItem="LV1-Ba-25i" secondAttribute="trailing" id="fsg-qt-7Hv"/>
                             <constraint firstItem="cCO-xu-S5J" firstAttribute="top" secondItem="0ts-vm-bxy" secondAttribute="bottom" constant="25" id="jGX-gm-8R1"/>
@@ -228,6 +233,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BvS-AE-gqc"/>
                     </view>
+                    <connections>
+                        <outlet property="moviePosterImageView" destination="LV1-Ba-25i" id="KRQ-k1-xvg"/>
+                        <outlet property="movieRatingImageView" destination="qbL-hd-LBt" id="dRQ-W6-nLb"/>
+                        <outlet property="movieSummaryLabel" destination="cCO-xu-S5J" id="S8j-DS-j4c"/>
+                        <outlet property="movieTimeslotLabel" destination="fQk-lg-E6B" id="UDQ-e2-9hU"/>
+                        <outlet property="movieTitleLabel" destination="EbZ-RH-AY5" id="Nd1-vc-aBo"/>
+                        <outlet property="summaryLoadingIndicator" destination="Xf6-zH-olW" id="TLg-9u-hi5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3T2-I3-OdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,7 +248,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AV" width="66" height="36"/>
         <image name="M" width="57" height="36"/>
     </resources>
 </document>
