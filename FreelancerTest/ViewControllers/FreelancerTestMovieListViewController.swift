@@ -35,8 +35,6 @@ class FreelancerTestMovieListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -56,10 +54,14 @@ extension FreelancerTestMovieListViewController : UITableViewDataSource {
             cell.customize(movie: displayableMovie)
             return cell
         }
-        else {
+        else if indexPath.row == self.viewModel?.getMovieCount() {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListLoadMoreCellIndicator") as! MovieListLoadingIndicatorTableViewCell
             cell.activityIndicator.startAnimating()
             return cell
+        }
+        else {
+            // return an empty cell. This should not happen. If it does, view model screwed up.
+            return UITableViewCell()
         }
     }
     
@@ -85,6 +87,7 @@ extension FreelancerTestMovieListViewController : UITableViewDataSource {
 extension FreelancerTestMovieListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == self.viewModel?.getMovieCount() {
+            // We're about to show the loading indicator, time to load more titles
             self.viewModel?.loadMoreMovies()
         }
     }
@@ -96,6 +99,7 @@ extension FreelancerTestMovieListViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath.row == self.viewModel?.getMovieCount() {
+            // we can't select the loading indicator
             return nil
         }
         else {
@@ -107,6 +111,7 @@ extension FreelancerTestMovieListViewController : UITableViewDelegate {
 extension FreelancerTestMovieListViewController : MovieListProviderDelegate {
     func movieListProvider(_: MovieListProvider, addedMoviesWithRange range: Range<Int>) {
         
+        // new movies/titles loaded. Add them to the table
         var indexPaths : [IndexPath] = []
         for row in range.lowerBound...range.upperBound {
             indexPaths.append(IndexPath(row: row, section: 0))

@@ -28,6 +28,7 @@ class BeefMovieListProvider : MovieListProvider {
     }
     
     func loadMoreMovies() {
+        // Get next batch of movies from whatsbeef
         let params : Parameters = ["start" : movieList.count]
         Alamofire.request(beefURL, parameters: params).validate().responseData { response in
             

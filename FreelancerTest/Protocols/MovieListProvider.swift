@@ -6,6 +6,9 @@
 //  Copyright © 2018 Christian John Lo. All rights reserved.
 //
 
+
+// Viewmodel for the movie list
+
 protocol MovieListProviderDelegate {
     func movieListProvider(_ : MovieListProvider, addedMoviesWithRange range: Range<Int>)
 }

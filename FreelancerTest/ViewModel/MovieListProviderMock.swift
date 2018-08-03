@@ -11,6 +11,7 @@ import Foundation
 class MovieListProviderMock: MovieListProvider {
     
     // implementations for mock up
+    
     var delegate: MovieListProviderDelegate?
     var movies : [DisplayableMovie]
     

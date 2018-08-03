@@ -24,6 +24,7 @@ class FreelancerTestMovieSummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // bindings
         self.title = viewModel?.displayableMovie.movieTitle
         self.movieTitleLabel.text = viewModel?.displayableMovie.movieTitle
         self.movieTimeslotLabel.text = viewModel?.displayableMovie.movieTimeslot

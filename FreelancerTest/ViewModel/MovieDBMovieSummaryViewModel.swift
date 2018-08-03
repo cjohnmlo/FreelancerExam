@@ -5,7 +5,6 @@
 //  Created by Christian John Lo on 02/08/2018.
 //  Copyright © 2018 Christian John Lo. All rights reserved.
 //
-// https://image.tmdb.org/t/p/w500
 
 import Foundation
 import Alamofire
@@ -18,6 +17,7 @@ class MovieDBMovieSummaryViewModel : DisplayableMovieSummary {
     var moviePosterURL: Observable<URL?>
     
     private let baseURL = "https://api.themoviedb.org/3/search/tv"
+    // API said get the config for poster/backdrop URL. But this would have to do for the moment.
     private let imageSourceURL = "https://image.tmdb.org/t/p/w780"
     
     init(movieDetails: DisplayableMovie) {
@@ -31,6 +31,7 @@ class MovieDBMovieSummaryViewModel : DisplayableMovieSummary {
     
     private func searchMovie() {
         
+        // search using only the movie/tv show title
         let params : Parameters = ["api_key" : "2093ce03b15202005d2837658657ae2f", "query" : self.displayableMovie.movieTitle]
         
         Alamofire.request(baseURL, parameters: params).validate().responseData { response in
@@ -43,6 +44,9 @@ class MovieDBMovieSummaryViewModel : DisplayableMovieSummary {
                     let response : MovieDBResponse = try jsonDecoder.decode(MovieDBResponse.self, from: jsonData)
                     
                     if response.results.count > 0 {
+                        
+                        // we're interested on the first result only
+                        
                         let showDetail : MovieDBShowDetail = response.results[0]
                         self.movieSummary.next(showDetail.overview)
                         
@@ -57,7 +61,7 @@ class MovieDBMovieSummaryViewModel : DisplayableMovieSummary {
                     
                 }
                 catch {
-                    // can't decode
+                    // can't decode. Most likely the response JSON changed.
                 }
             }
         }
