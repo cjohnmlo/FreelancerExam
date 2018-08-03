@@ -29,31 +29,43 @@ class BeefMovieListProvider : MovieListProvider {
     
     func loadMoreMovies() {
         let params : Parameters = ["start" : movieList.count]
-        Alamofire.request(beefURL, parameters: params).validate().responseJSON { response in
+        Alamofire.request(beefURL, parameters: params).validate().responseData { response in
             
-            if let json = response.result.value {
-                let jsonDict = json as! Dictionary<String, Any>
+            if let jsonData = response.result.value {
                 
-                if let results = jsonDict["results"] {
-                    let resultArray = results as! Array<Dictionary<String, Any>>
+                let jsonDecoder = JSONDecoder()
+                
+                do {
+                    let response : MovieBeefGuideResponse = try jsonDecoder.decode(MovieBeefGuideResponse.self, from: jsonData)
                     
                     let currentCount = self.movieList.count
                     
-                    for movieJson in resultArray {
-                    
-                        let title = movieJson["name"] as! String
-                        let startTime = movieJson["start_time"] as! String
-                        let endTime = movieJson["end_time"] as! String
-                        let rating = movieJson["rating"] as! String
-                        let channel = movieJson["channel"] as! String
-                        self.movieList.append(Movie(movieTitle: title, movieTimeslot: "\(startTime) - \(endTime)", movieChannel: Channel(withRawValue: channel), movieRating: Rating(withRawValue: rating)))
+                    for beefMovie in response.results {
+                        self.movieList.append(Movie(movieTitle: beefMovie.name, movieTimeslot: "\(beefMovie.start_time) - \(beefMovie.end_time)", movieChannel: Channel(withRawValue: beefMovie.channel), movieRating: Rating(withRawValue: beefMovie.rating)))
                     }
                     
                     let lastCount = self.movieList.count
-
+                    
                     self.delegate?.movieListProvider(self, addedMoviesWithRange: currentCount..<lastCount)
+                    
+                }
+                catch {
+                    // can't decode
                 }
             }
         }
     }
+}
+
+struct MovieBeefMovie: Decodable {
+    var name : String
+    var start_time : String
+    var end_time : String
+    var rating : String
+    var channel : String
+}
+
+struct MovieBeefGuideResponse: Decodable {
+    var count : Int
+    var results : [MovieBeefMovie]
 }
