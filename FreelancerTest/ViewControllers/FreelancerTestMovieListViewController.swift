@@ -14,6 +14,7 @@ class FreelancerTestMovieListViewController: UIViewController {
     @IBOutlet weak var movieListTableView: UITableView!
     
     private var selectedMovie : DisplayableMovie?
+    fileprivate var shouldAnimate : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class FreelancerTestMovieListViewController: UIViewController {
         
         self.movieListTableView.delegate = self
         self.movieListTableView.dataSource = self
+        self.movieListTableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
 
@@ -89,7 +91,25 @@ extension FreelancerTestMovieListViewController : UITableViewDelegate {
         if indexPath.row == self.viewModel?.getMovieCount() {
             // We're about to show the loading indicator, time to load more titles
             self.viewModel?.loadMoreMovies()
+            shouldAnimate = false
         }
+        else if shouldAnimate {
+            animateIn(cell: cell, withDelay: 0.6)
+        }
+    }
+    
+    // animation from: https://sociumapp.com/2016/11/23/adding-cell-in-uitableview-with-nice-animation.html
+    
+    fileprivate func animateIn(cell: UITableViewCell, withDelay delay: TimeInterval) {
+        let initialScale: CGFloat = 1.2
+        let duration: TimeInterval = 0.5
+        
+        cell.alpha = 0.0
+        cell.layer.transform = CATransform3DMakeScale(initialScale, initialScale, 1)
+        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            cell.alpha = 1.0
+            cell.layer.transform = CATransform3DIdentity
+        }, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -119,8 +139,10 @@ extension FreelancerTestMovieListViewController : MovieListProviderDelegate {
         
         self.movieListTableView.beginUpdates()
         // delete the loading indicator
-        self.movieListTableView.deleteRows(at: [indexPaths[0]], with: .automatic)
-        self.movieListTableView.insertRows(at: indexPaths, with: .top)
+        self.movieListTableView.deleteRows(at: [indexPaths[0]], with: .none)
+        self.movieListTableView.insertRows(at: indexPaths, with: .none)
+        self.shouldAnimate = true;
         self.movieListTableView.endUpdates()
     }
 }
+
